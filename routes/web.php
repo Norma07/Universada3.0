@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', ['uses' =>'ViewController@index', 'as' =>'index.index']);
+Route::get('/Ajedrez', ['uses' => 'ViewController@ajedrez', 'as' =>'ajedrez.index']);
+Route::get('/Disciplinas', ['uses' => 'ViewController@disciplinas', 'as' =>'disciplinas.index']);
+Route::get('/AdminIndex',['uses' => 'HomeController@index', 'as' => 'administrator.index']);
+Auth::routes();
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/home', 'HomeController@index')->name('home');
+//Ruta de noticias
+Route::resource('News', 'NewsController');
