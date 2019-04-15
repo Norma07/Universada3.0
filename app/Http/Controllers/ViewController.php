@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class ViewController extends Controller
 {
     public function ajedrez(){
-        return view('ajedrez');
+        return view('disciplines.ajedrez');
     }
     public function disciplinas(){
-        return view ('disciplinas');
+        return view ('disciplines.disciplinas');
     }
 
     public function index(){
